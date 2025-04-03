@@ -5,6 +5,7 @@ function App() {
   const [valor1, setValor1] = useState("");  // Estado para el primer valor
   const [valor2, setValor2] = useState("");  // Estado para el segundo valor
   const [resultado, setResultado] = useState("");  // Estado para el resultado
+  const [input, setInput] = useState("")
 
   const calcular = (operador) => {
     const num1 = parseFloat(valor1);
@@ -46,11 +47,15 @@ function App() {
          {/* Input  */}
           <ul className="w-4/5 mx-auto flex items-center w-full gap-2">
             <li>
-              <button className="px-4 py-2 bg-red-500 text-white rounded">C</button>
+              <button className="px-4 py-2 bg-red-500 text-white rounded"
+              onClick ={() => setInput("")} >AC</button>
             </li>
             <li className="flex-grow">
               <input className="w-full border border-gray-300 p-2 rounded"
-                placeholder='Ingrese expresión' />
+                placeholder='Ingrese expresión' 
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}/>
             </li>
             <li>
               <button className="px-4 py-2 bg-green-500 text-white rounded">Enter</button>
@@ -60,61 +65,93 @@ function App() {
         {/* Botones */}
         <div className="mt-6 flex flex-col justify-center items-center w-3/4 h-3/4 gap-4 text-white">
           <div className="flex gap-4">
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button 
+            onClick ={() => setInput(input + "1")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               1
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button 
+            onClick ={() => setInput(input + "2")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               2
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button 
+            onClick ={() => setInput(input + "3")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               3
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button 
+            onClick ={() => setInput(input + "+")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               +
             </button>
           </div>
 
           <div className="flex gap-4">
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button
+            onClick ={() => setInput(input + "4")}
+             className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               4
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button
+            onClick ={() => setInput(input + "5")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               5
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button
+            onClick ={() => setInput(input + "6")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               6
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button
+            onClick ={() => setInput(input + "-")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               -
             </button>
           </div>
 
           <div className="flex gap-4">
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button 
+            onClick ={() => setInput(input + "7")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               7
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button
+            onClick ={() => setInput(input + "8")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               8
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+            <button
+            onClick ={() => setInput(input + "9")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
               9
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button
+            onClick ={() => setInput(input + "*")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               *
             </button>
           </div>
 
           <div className="flex gap-4">
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button
+            onClick ={() => setInput(input + "(")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               (
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
-              1
+            <button
+            onClick ={() => setInput(input + "0")}
+            className="w-16 h-16 flex items-center justify-center bg-orange-400 hover:bg-orange-600 rounded text-2xl font-bold">
+              0
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button
+            onClick ={() => setInput(input + ")")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               )
             </button>
-            <button className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
+            <button
+            onClick ={() => setInput(input + "/")}
+            className="w-16 h-16 flex items-center justify-center bg-red-400 hover:bg-red-600 rounded text-2xl font-black">
               /
             </button>
           </div>
