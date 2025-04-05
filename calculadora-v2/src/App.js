@@ -112,7 +112,7 @@ function App() {
                 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
                 onClick={() => {
                   setInput("");
-                  setError(""); // CAMBIO: Se limpia el mensaje de error al presionar AC.
+                  setError(""); //Sacar el msj de error
                 }}>
                 AC
               </button>
@@ -123,7 +123,7 @@ function App() {
                 placeholder="Ingrese expresión"
                 type="text"
                 value={input}
-                onChange={handleChange}  // CAMBIO: Se usa handleChange.
+                onChange={handleChange}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     calcular();
@@ -140,10 +140,8 @@ function App() {
             </li>
           </ul>
 
-          {/* CAMBIO: Se muestra el mensaje de error debajo del input */}
-          {error && (
-            <p className="mt-4 text-red-500 font-bold">{error}</p>
-          )}
+          {/* Mensaje de Error */}
+          <p className="mt-4 text-red-500 font-bold">{error}</p>
 
           {/* Botones de la calculadora */}
           <div className="mt-6 flex flex-col justify-center items-center w-3/4 h-3/4 gap-4 text-white">
